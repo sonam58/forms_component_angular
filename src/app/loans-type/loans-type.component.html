@@ -1,0 +1,78 @@
+
+<h1 class="text-center">Reactive Form</h1>
+<form [formGroup] = "addLoanTypeForm">
+    <div class="container">
+    <table class="mx-auto">
+        <tr>
+    <div class="form-group">
+        <label> 
+            Loan Name
+        </label>
+        <input type="text" formControlName = "loanName">
+        <div><span class = " text-danger " *ngIf="addLoanTypeForm.get('loanName')?.hasError('required')
+         && addLoanTypeForm.get('loanName')?.touched" >Loan name is required.</span></div>
+        <div><span class = " text-danger " *ngIf="addLoanTypeForm.get('loanName')?.hasError('minlength')
+        && addLoanTypeForm.get('loanName')?.touched" >Loan name should be mimimum 10 charcters.</span></div>
+        <div><span class = " text-danger " *ngIf="addLoanTypeForm.get('loanName')?.hasError('maxlength')
+        && addLoanTypeForm.get('loanName')?.touched" >Loan name should have maximum 15 characters.</span></div>
+    </div> <br>
+</tr>
+<tr>
+    <div class="form-group">
+        <label>
+            Loan Type
+        </label>
+        <input type="text" formControlName = "loanType" >
+    </div> <br>
+</tr>
+<tr>
+    <div class="form-group">
+        <label> 
+        Loan Discription
+        </label>
+        <textarea formControlName="loanDiscription"></textarea>
+    </div> <br>
+</tr>
+
+<!-- <tr>
+    <div class="form-group" formArrayName="user">
+        <label>Users</label>
+        <div *ngFor="let control of userFormGroups.controls;let i=index">
+            <input type="text" [formControlName]="i">
+        </div>
+    </div>
+</tr> -->
+
+<tr>
+    <div class="form-group"formArrayName="users">
+      <label>users</label>
+      <div *ngFor="let control of userFormGroups.controls;let i=index" [formGroupName] ="i">
+          <input type="text" formControlName="name" >
+          <input type="text" formControlName="age" (blur)="assignDesig(i)">
+          <input type="text" formControlName="desig">
+          <button (click)="removeUsers(i)">Remove</button>
+      </div>
+    </div>
+</tr>
+
+<button (click) = "addLoanType()" class="btn btn-primary" style="padding: 2px; margin-top: 2px;" [disabled] = "!addLoanTypeForm.valid">Add Loan Type</button>
+
+<button (click) = 'resetForm()' class="btn btn-primary" style="padding: 2px; margin-left: 2px"> Reset Form</button>
+
+<button (click)='addUser()' class= 'btn btn-primary' style="padding: 2px; margin-top: 2px; margin-left: 2px">Add user</button>
+
+</table>
+    <!-- <div class="form-group">
+        <label>
+            Loan Amount in between
+        </label>
+        <input list="amount"/>
+        <datalist id="amount">
+            <option value="1L to 10L" >1L to 10L</option>
+            <option value="10 to 350L">10 to 350L</option>
+            <option value="2L to 50L">2L to 50L</option>
+            <option value="3L to 80L">3L to 80L</option>
+        </datalist>
+    </div> -->
+</div>     
+</form>

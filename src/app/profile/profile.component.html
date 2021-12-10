@@ -1,0 +1,101 @@
+<div class="main">
+    <div class="head">
+        <h1>MY PROFILE</h1>
+    </div>
+    <form #profileForm="ngForm" (submit)="profile(profileForm)">
+        <div class="image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRMFSgp_61fpf2n59BOvfHy1s2w1fOHrkKkA&usqp=CAU"
+                Width=50px height=70 alt="The image is unavailable">
+        </div><br />
+
+        <div class="name">Name:
+            <input style="padding-left: 20%;" type="text" [(ngModel)]="uname" name="uname" size=40
+                placeholder="Please Enter Username" required maxlength=12 minlength=4/>
+        </div><br />
+
+        <div class="midname">Middle name:
+            <input style="padding-left: 20%;"type="text" [(ngModel)]="middleName" name="middleName" size=40 pattern="[A-Za-z]{4,}" required
+                placeholder=" Please Enter Father Name">
+        </div><br>
+
+        <div class="age">Age:
+            <input type="text" [(ngModel)]="age" name="age" />
+        </div><br>
+
+        <div id="forpassword">
+            Password:
+            <input type="password" [(ngModel)]="password" name="password"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" method="post">
+        </div> <br>
+
+        <div id="gender">Gender:
+            <input type="radio" [(ngModel)]="male" name="male" gender="M" />
+            <label for="male">Male</label>
+            <input type="radio" [(ngModel)]="female" name="female" checked gender="F" />
+            <label for="female">Female</label>
+        </div><br>
+
+        <div class="tech">
+            Technologies:
+            <input type="checkbox" [(ngModel)]="tech1" name="tech1" value="html" />HTML
+            <input type="checkbox" [(ngModel)]="tech2" name="tech2" value="css" />CSS
+            <input type="checkbox" [(ngModel)]="tech3" name="tech3" value="js" />JavaScript
+        </div><br>
+
+        <div class="branch">
+            Branch:
+            <input list="Branches" />
+            <datalist id="Branches">
+                <option value="Extc" [(ngModel)]="extc" name="extc">Electronics & Telecommunication</option>
+                <option value="Comps" [(ngModel)]="comps" name="comps">Computers</option>
+                <option value="Mech" [(ngModel)]="mech" name="mech">Mechanical</option>
+                <option value="Elec" [(ngModel)]="elec" name="elec">Electrical</option>
+            </datalist>
+        </div><br>
+
+        <div class="city">
+            City Lived in:
+            <select name="city">
+                <option [(ngModel)]="mumbai" name="mumbai">Mumbai</option>
+                <option [(ngModel)]="pune" name="pune">Pune </option>
+                <option value="BGL" [(ngModel)]="bangluru" name="bangluru" selected> Bangluru</option>
+                <option [(ngModel)]="rajsthan" name="rajsthan">Rajasthan </option>
+                <option [(ngModel)]="chennai" name="chennai">Chennai</option>
+                <option [(ngModel)]="gurgaon" name="gurgaon">Gurgaon</option>
+            </select>
+        </div><br>
+        <div class="filesUpload">
+            Upload Resume: <input [(ngModel)]="resume" name="resume" type="file" multiple>
+        </div><br>
+
+        <div class="mail">Email Id:
+            <input [(ngModel)]="eMail" name="eMail" type="email" />
+        </div><br>
+
+        <div class="phno"> Contact no.:
+            <input [(ngModel)]="contact" name="contact" type="tel" pattern="[0-9]{10}">
+        </div><br>
+
+        <div class="jjd">job joining date:
+            <input [(ngModel)]="date" name="date" type="datetime-local">
+        </div><br>
+
+        <div class="favColor">Your favorite color:
+            <input [(ngModel)]="clr" name="clr" type="color" />
+        </div><br>
+
+        <div class="dob"> Your Date Of Birth:
+            <input [(ngModel)]="birthDate" name="birthDate" type="Date" />
+        </div><br>
+
+        <div class="birthTime">Birth Time:
+            <input [(ngModel)]="birthTime" name="birthTime" type="time" />
+        </div><br>
+
+        <div class="add">Address:<textarea [(ngModel)]="address" name="address" cols="20" rows="2">
+        </textarea></div><br>
+        <a href="" class="btn"> Click me</a> <br>
+        <div id="submit1"><input type="submit" [disabled]="!profileForm.valid" value="Submit form" /></div>
+        <div id="reset1"><input type="reset" value="Reset" /></div>
+    </form>
+</div>

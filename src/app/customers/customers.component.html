@@ -1,0 +1,34 @@
+<div class="main">
+    <div class="abs">
+        <h1>Registration Form</h1>
+    </div>
+    <form #customerForm="ngForm" (submit)="customer(customerForm)">
+        <div class="div1">
+            <span style="text-align: right;">Company Name:</span>
+            <span style="text-align: left;"><input type="text" [(ngModel)]="companyName" name="comapnyName"></span> <br>
+            <span style="text-align: right;">First Name: </span>
+            <span style="text-align: left;"><input type="text" [(ngModel)]="firstName" name="firstName" placeholder="Your name"></span><br>
+            Last Name: <input type="text" [(ngModel)]="lastName" name="lastName" placeholder="Your last name"><br>
+            Email Address:<input type="text" [(ngModel)]="emailAddress" name="emailAddress"
+                placeholder="Your email id"><br>
+            Phone:<input type="text" [(ngModel)]="phoneNo" name="phoneNo" placeholder="mobile number"><br>
+        </div> <br>
+        Your Meal Preferences: <br>
+        <input type="radio" [(ngModel)]="veg" name="veg"><label for="veg">Vegitarian</label><br>
+        <input type="radio" [(ngModel)]="nonVeg" name="nonVeg"><label for="nonVeg">Non Vegetarian</label><br>
+
+        Cancel Registration:<input type="checkbox" [(ngModel)]="cancelReg" name="cancelReg"><br>
+        Job Function: <br>
+        <input type="radio" [(ngModel)]="management" name="management"><label for="management">Campaign
+            Management</label><br>
+        <input type="radio" [(ngModel)]="management" name="admin"><label for="admin">CRM Administrator</label><br>
+        <input type="radio" [(ngModel)]="deployer" name="deployer"><label for="deployer">Email Deployement</label><br>
+        <input type="radio" [(ngModel)]="partner" name="partner"><label for="partner">Partner</label><br>
+        <input type="radio" [(ngModel)]="developer" name="developer"><label for="developer">Developer</label><br>
+
+        Expectations:
+        <textarea [(ngModel)]="expectation" name="expectation"></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>

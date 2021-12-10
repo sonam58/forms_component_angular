@@ -1,0 +1,105 @@
+.main{
+    align-content: center;
+    margin: auto;
+    width: 40%;
+    border: 3px solid rgb(42, 68, 62);
+    background-color: slategray;
+    padding: 10px;
+}
+.head{
+    color: rgb(65, 10, 10);
+    text-decoration: rgb(39, 61, 16);
+    padding-left: 30%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    border-color: rgb(85, 73, 73);
+    border-style: groove;
+}
+.image{
+    padding-top: 5%;
+    border-radius: 40%;
+}
+.name{
+    font-family: fantasy;
+}
+.midname{
+    font-family: fantasy;
+}
+.age{
+    font-family: fantasy;
+}
+#forpassword{
+   
+    font-family: fantasy;
+    
+}
+#gender{
+    font-family: fantasy;
+}
+.tech{
+    font-family: fantasy;
+}
+.branch{
+    font-family: fantasy;
+}
+#Branches{
+    font-family: fantasy;
+}
+.city{
+    font-family: fantasy;
+}
+.filesUpload{
+    font-family: fantasy;
+}
+.mail{
+    font-family: fantasy;
+}
+
+.phno{
+    font-family: fantasy;
+}
+.jjd{
+    font-family: fantasy;
+}
+.favColor{
+    font-family: fantasy;
+}
+
+.dob{
+    font-family: fantasy;
+}
+.birthTime{
+    font-family: fantasy;
+}
+.add{
+    font-family: fantasy;
+}
+
+.btn{
+    display: inline-block;
+    background: #68362f;
+    color: #fff;
+    padding: 8px 15px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0,5s;
+}
+
+#submit1{
+    font-family: fantasy;
+    background: #68362f;
+    border-radius: 30px;
+    padding: 8px 15px;
+    transition: background 0,5s;
+    display: inline-block;
+    
+}
+#reset1{
+    font-family: fantasy;
+    font-family: fantasy;
+    background: #68362f;
+    border-radius: 30px;
+    padding: 8px 15px;
+    transition: background 0,5s;
+    display: inline-block;
+}
